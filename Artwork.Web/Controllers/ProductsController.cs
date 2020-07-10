@@ -24,6 +24,8 @@ namespace Artwork.Web.Controllers
         {
             return ProductService.GetProducts();
         }
+
+
         //[HttpPatch]
         [Route("Rate")]
         [HttpGet]
