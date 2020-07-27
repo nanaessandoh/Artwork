@@ -17,9 +17,7 @@
     "Title": "Diamond Painting Stickers Kits for Kids",
     "Description": "Package contains 9 pcs superhero 5D DIY diamond pianting kits and 12 sheets superhero stickers.",
     "Price": "C$ 14.99",
-    "Ratings": [
-      3
-    ]
+    "Ratings": null
   },
   {
     "Id": "item3",
@@ -149,7 +147,15 @@
     "Title": "Moon Sea Ocean Landscape Picture Canvas Wall Art Print Painting",
     "Description": "Canvas wall art printings artwork is HD pictures photo printed on high quality canvas,the wall art is perfect for the living room, bedroom wall decoration.",
     "Price": "C$ 89.99",
-    "Ratings": null
+    "Ratings": [
+      3,
+      4,
+      4,
+      4,
+      4,
+      4,
+      2
+    ]
   },
   {
     "Id": "item16",
