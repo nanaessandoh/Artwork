@@ -12,7 +12,7 @@
             <a @onclick="asset => SelectProduct(product.Id)" data-toggle="modal" data-target="#productModal">
             <div class="card-img" style="background-image: url('@product.Image');"></div>
             </a>
-            <div class="card-body"><h5 class="card-title">@product.Title</h5></div>
+            <div class="card-body text-center"><h6 class="card-title">@product.Title</h6></div>
             <div class="text-center">
                 <small class="text-muted ">
                     <button @onclick="asset => SelectProduct(product.Id)" data-toggle="modal" data-target="#productModal" class="btn btn-outline-dark">More Info</button>
