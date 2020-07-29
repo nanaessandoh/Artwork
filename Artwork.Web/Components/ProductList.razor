@@ -8,7 +8,7 @@
 <div class="card-columns">
     @foreach (var product in ProductService.GetProducts())
     {
-        <div class="card">
+        <div class="card mb-5">
             <a @onclick="asset => SelectProduct(product.Id)" data-toggle="modal" data-target="#productModal">
             <div class="card-img" style="background-image: url('@product.Image');"></div>
             </a>
