@@ -9,12 +9,11 @@ namespace Artwork.Web.Services
 {
     public class JsonFileProductService
     {
+        public IWebHostEnvironment WebHostEnvironment;
         public JsonFileProductService(IWebHostEnvironment webHostEnvironment)
         {
             WebHostEnvironment = webHostEnvironment;
         }
-
-        public IWebHostEnvironment WebHostEnvironment { get; }
 
         private string JsonFileName
         {
@@ -23,14 +22,12 @@ namespace Artwork.Web.Services
 
         public IEnumerable<Product> GetProducts()
         {
-            using (var jsonFileReader = File.OpenText(JsonFileName))
-            {
-                return JsonSerializer.Deserialize<Product[]>(jsonFileReader.ReadToEnd(),
-                    new JsonSerializerOptions
-                    {
-                        PropertyNameCaseInsensitive = true
-                    });
-            }
+            using var jsonFileReader = File.OpenText(JsonFileName);
+            return JsonSerializer.Deserialize<Product[]>(jsonFileReader.ReadToEnd(),
+                new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
         }
 
         public void AddRating(string productId, int rating)
@@ -51,17 +48,15 @@ namespace Artwork.Web.Services
                 query.Ratings = ratings.ToArray();
             }
 
-            using (var outputStream = File.OpenWrite(JsonFileName))
-            {
-                JsonSerializer.Serialize<IEnumerable<Product>>(
-                    new Utf8JsonWriter(outputStream, new JsonWriterOptions
-                    {
-                        SkipValidation = true,
-                        Indented = true
-                    }),
-                    products
-                );
-            }
+            using var outputStream = File.OpenWrite(JsonFileName);
+            JsonSerializer.Serialize(
+                new Utf8JsonWriter(outputStream, new JsonWriterOptions
+                {
+                    SkipValidation = true,
+                    Indented = true
+                }),
+                products
+            );
         }
     }
 

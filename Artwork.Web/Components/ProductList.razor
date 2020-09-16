@@ -9,16 +9,15 @@
     @foreach (var product in ProductService.GetProducts())
     {
         <div class="card mb-5">
-            <a @onclick="asset => SelectProduct(product.Id)" data-toggle="modal" data-target="#productModal">
+            <a @onclick="asset => SelectProduct(product.Id)" data-toggle="modal" class="stretched-link" data-target="#productModal">
             <div class="card-img" style="background-image: url('@product.Image');"></div>
             </a>
-            <div class="card-body text-center"><h6 class="card-title">@product.Title</h6></div>
-            <div class="text-center">
+            <div class="card-body text-center mb-2"><h6 class="card-title">@product.Title</h6></div>
+            @*<div class="text-center">
                 <small class="text-muted ">
                     <button @onclick="asset => SelectProduct(product.Id)" data-toggle="modal" data-target="#productModal" class="btn btn-outline-dark">More Info</button>
                 </small>
-            </div>
-            <p></p>
+            </div>*@
         </div>
     }
 
