@@ -34,7 +34,6 @@ namespace Artwork.Web.Services
         {
             var products = GetProducts();
 
-            //LINQ
             var query = products.First(x => x.Id == productId);
 
             if (query.Ratings == null)
