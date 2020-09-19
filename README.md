@@ -26,7 +26,8 @@ On the command line, install the template.
 
 ```cmd
 cd Artwork
-dotnet watch run
+dotnet restore
+dotnet run
 ```
 
 After the command shell indicates that the app has started, browse to 
